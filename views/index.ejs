@@ -1,0 +1,83 @@
+<%- include ('partials/header.ejs'); %>
+<body>
+    <div class="container">
+        <div class="row-cols-1 my-5">
+            <div class="col">
+                <h2 class="text-center">Controle de Estoque</h1>
+            </div>
+        </div>
+        <div class="row-cols-1">
+            <div class="col shadow p-3 rounded-3 table-responsive">
+                <table class="table align-middle text-center table-striped caption-top">
+                    <caption>Produtos</caption>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>Descrição</th>
+                            <th>Preço</th>
+                            <th>Quantidade</th>
+                            <th>Data de atualização</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% estoques.forEach(estoque=> { %>
+                            <tr>
+                                <td>
+                                    <%= estoque.id %>
+                                </td>
+                                <td>
+                                    <%= estoque.nome %>
+                                </td>
+                                <td>
+                                    <%= estoque.descricao %>
+                                </td>
+                                <td>
+                                    <%= estoque.preco %>
+                                </td>
+                                <td>
+                                    <%= estoque.quantidade %>
+                                </td>
+                                <td>
+                                    <%= estoque.updatedAt %>
+                                </td>
+                            </tr>
+                            <% }) %>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col mt-3 shadow p-3 rounded-3 table-responsive">
+                <table class="table align-middle text-center table-striped caption-top">
+                    <caption>Fornecedores</caption>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>Telefone</th>
+                            <th>Email</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% fonecedores.forEach(fornecedor=> { %>
+                            <tr>
+                                <td>
+                                    <%= fornecedor.id %>
+                                </td>
+                                <td>
+                                    <%= fornecedor.nome %>
+                                </td>
+                                <td>
+                                    <%= fornecedor.telefone %>
+                                </td>
+                                <td>
+                                    <%= fornecedor.login %>
+                                </td>
+                            </tr>
+                            <% }) %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+<%- include ('partials/footer.ejs'); %>
